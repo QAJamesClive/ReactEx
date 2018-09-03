@@ -4,11 +4,13 @@ import ProductRow from './ProductRow.jsx';
      const ProductTable  = (props) => {
         let rows = [];
         let lastCategory = null;
-        for(product in props.products){
-            if(product.category != lastCategory){
-                
+        props.products.forEach((product) => {
+            if(product.category !== lastCategory){
+                lastCategory = product.category;
+                rows.push(<ProductCategoryRow category = {product.category}/>);
             }
-        }
+            rows.push(<ProductRow product = {product} />);
+        })
         return(
             <table>
                 <thead>
@@ -18,8 +20,7 @@ import ProductRow from './ProductRow.jsx';
                 </tr>
                 </thead>
                 <tbody>
-                    <ProductCategoryRow />
-                    <ProductRow />
+                    {rows}
                 </tbody>
             </table>
         )

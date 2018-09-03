@@ -1,9 +1,9 @@
 import React from "react";
-const ProductRow = () => {
+const ProductRow = (props) => {
     return(
         <tr>
-            <td>iPhone6</td>
-            <td>£10</td>
+            <td>{props.product.name}</td>
+            <td>{props.product.price}</td>
         </tr>
     )
 }

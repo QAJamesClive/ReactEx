@@ -8,7 +8,7 @@ export default class FilterableProductTable extends React.Component {
         return (
             <div>
                 <SearchBar />
-                <ProductTable product = {PRODUCTS}/>
+                <ProductTable products = {PRODUCTS}/>
                </div>
         );
     }
